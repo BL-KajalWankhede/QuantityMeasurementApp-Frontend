@@ -28,6 +28,7 @@ export type UserProfile = {
 export type AuthResponse = {
   tokenType: string
   accessToken: string
+  refreshToken?: string
   issuedAtEpochSeconds: number
   expiresAtEpochSeconds: number
   user: UserProfile

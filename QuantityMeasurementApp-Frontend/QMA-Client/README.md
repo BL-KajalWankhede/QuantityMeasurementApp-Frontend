@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# 📏 Quantity Measurement Application (QMA) - Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![React](https://img.shields.io/badge/React-18-blue.svg)
+![Vite](https://img.shields.io/badge/Build-Vite-purple.svg)
 
-Currently, two official plugins are available:
+**Quantity Measurement App (QMA)** is a high-end, industrial-grade application designed for precision unit conversions and comparisons. This repository contains the **Premium React Frontend**, which acts as the presentation layer for the QMA microservices ecosystem.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Environment
+*   **Production Frontend:** [https://quantitymeasurementapp-p0gz.onrender.com](https://quantitymeasurementapp-p0gz.onrender.com)
+*   **Backend API Gateway:** Connects to `https://quantitymeasurementapp-api-5be3.onrender.com`
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🏗️ The Frontend Workspace
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Unlike traditional monoliths, this frontend is entirely decoupled from the backend. It focuses purely on delivering a fast, responsive user experience:
+1.  **Professional Split-Screen Auth:** A clean, high-end branding sidebar and centered login/signup forms.
+2.  **Advanced Dashboard:** A unified workspace for real-time conversions (Length, Weight, Volume, Temperature) and history tracking.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Key Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+*   **⚡ Precision UI:** Highly accurate input forms for complex unit conversion mathematics.
+*   **📊 History Tracking:** Every conversion is automatically displayed in your profile history.
+*   **🛡️ Multi-Method Auth:** Secure login via traditional Email/Password or the ultra-fast **Continue with Google** (OAuth2).
+*   **🎨 Premium UI/UX:** A professional "Indigo & Teal" design language with custom SCSS styling.
+
+---
+
+## 🔐 Security & Authentication Handshake
+
+This frontend securely communicates with the backend microservices:
+1.  **Identity Handshake:** When using Google Login, the frontend receives a signed JWT from the Gateway.
+2.  **Cross-Origin Persistence:** Tokens are persisted to `localStorage` securely.
+3.  **Gateway Validation:** The frontend attaches the JWT to the `Authorization` header for all requests (like saving history).
+
+---
+
+## ☁️ Production Architecture (Render)
+
+This React application is optimized for cloud deployment using **Render** as a static site.
+
+### **Required Environment Variables**
+To run this in production, ensure the following variable is set in your hosting dashboard:
+*   `VITE_API_BASE_URL`: The live URL of your API Gateway (e.g., `https://quantitymeasurementapp-api-5be3.onrender.com`)
+
+---
+
+## 🛠️ Technology Stack
+
+### **Frontend (The Experience)**
+*   **React 18 / Vite** (Lightning-fast builds).
+*   **State Management:** React Context API & Hooks.
+*   **Styling:** Custom SCSS with a professional design system (Inter & Space Grotesk fonts).
+*   **Icons:** Lucide-React.
+*   **Network:** Axios (for connecting to the Java Gateway).
+
+---
+
+## 🚦 Getting Started (Production Deployment)
+
+### **1. Building the Client**
+To create an optimized production build of the React application:
+```powershell
+# Install dependencies
+npm install
+
+# Compile the application for production
+npm run build
+```
+The compiled files will be generated in the `/dist` directory, ready to be served by any static hosting provider.
+
+### **2. Backend Connection Setup**
+Ensure your production hosting environment (e.g., Render, Vercel, Netlify) has the following Environment Variable configured to point to your live API Gateway:
+```properties
+VITE_API_BASE_URL=https://quantitymeasurementapp-api-5be3.onrender.com
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 👤 Author
+**Kajal Wankhede**
+***GitHub:** [@BL-KajalWankhede](https://github.com/BL-KajalWankhede)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Precision in every unit, excellence in every calculation.*
